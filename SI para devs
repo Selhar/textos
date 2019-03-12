@@ -1,3 +1,7 @@
-# Introdução há segurança da informação para desenvolvedores web
+Quando se fala de segurança da informação do ponto de vista de uma desenvolvedora, é importante lembrar que nenhum sistema está inteiramente seguro, toda a camada OSI é suscetível há um ataque.
 
-[todo]
+![alt text](https://imgs.xkcd.com/comics/security.png)
+
+Então um sistema seguro nunca é um sistema imune, é um "sistema relativamente seguro ao tipo de ataque que ele está suscetível"; um banco precisa de guardas armados e portas de chumbo, seus 25 terabytes filmes não. Tomara que não.
+Partindo do princípio de que segurança é um termo relativo ao tipo de ataque, a responsabilidade de uma desenvolvedora nessa segurança é uma fração do todo, você vai ser responsável pela camada de software, mas um bom software hosteado em windows XP sem service pack e com um modem de 2005 não garante segurança. É preciso ter essa consciência de que tanto hardware como software são suscetíveis e que dependendo da visibilidade ou aplicação do produto, talvez seja necessário uma equipe especializada na área e não somente software desenvolvido com boas práticas.
+Dito isso, a grande maioria dos produtos existentes não vai ser vítima de um ataque direcionado, principalmente no Brasil a maioria das preocupações com segurança de software é uma preocupação com ataques em massa, que não buscam especificamente o seu produto e sim "qualquer produto vulnerável à esses tipos de ataques" e aí é onde entra o desenvolvimento web, tomando cuidados que serão discutidos aqui para que sua aplicação não vire parte de uma botnet usada para fazer upload de jogo pirata e minerar bitcoin. Ah, outra coisa importante, a maioria dos ataques não vão ser direcionados a destruir seu computador e sim usar recursos do seu computador para um propósito específico.
