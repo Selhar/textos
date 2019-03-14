@@ -1,9 +1,15 @@
-Quando se fala de segurança da informação do ponto de vista de uma desenvolvedora, é importante lembrar que nenhum sistema está inteiramente seguro, toda a camada OSI é suscetível há um ataque.
+### O que significa invadir um sistema e porquê sistemas são invadidos
 
-![alt text](https://imgs.xkcd.com/comics/security.png)
+Segurança da informação é algo pouco falado e pouco entendido, mesmo entre quem trabalha com programação de ponta ainda há a noção de que hackers usam capuz preto e terminais com letras verdes, além de fazerem ASCII art extremamente detalhada junto de cada payload. Isso torna necessário uma pequena definição de certos termos que serão usados aqui.
 
-Então um sistema seguro nunca é um sistema imune, é um "sistema relativamente seguro ao tipo de ataque que ele está suscetível"; um banco precisa de guardas armados e portas de chumbo, seus 25 terabytes filmes não. Tomara que não.
-Partindo do princípio de que segurança é um termo relativo ao tipo de ataque, a responsabilidade de uma desenvolvedora nessa segurança é uma fração do todo, você vai ser responsável pela camada de software, mas um bom software hosteado em windows XP sem service pack e com um modem de 2005 não garante segurança. É preciso ter essa consciência de que tanto hardware como software são suscetíveis e que dependendo da visibilidade ou aplicação do produto, talvez seja necessário uma equipe especializada na área e não somente software desenvolvido com boas práticas.
-Dito isso, a grande maioria dos produtos existentes não vai ser vítima de um ataque direcionado e sim uma "busca por sistemas vulneráveis", seja para criar uma botnet (menos provável em sistemas web, já que os servidores que hosteiam software em produção são bem seguros), seja para conseguir logins e senhas dos usuários do seu site (esse, sim, muito mais provável e comum no desenvolvimento web). Em ambos os casos quem está invadindo não quer ser visto, então a ideia de que ser invadido é algo raro porque nada piscou vermelho no computador é um pouco defasada, pegar o banco de dados de uma empresa e não ser descoberto significa que aquelas senhas têm um valor enorme, seja para venda ou uso pessoal, nenhum dos usuários vai trocar as senhas dos outros serviços que usam esse mesmo login e senha caso ninguém saiba que essa senha não é mais segura, logo, têm mais valor.
+As razões que levam alguém à tentar invadir um sistema web geralmente são monetárias, o objetivo raramente é danificar a estrutura de um sistema e sim conseguir transformar a base de usuários de um site em recursos para si mesmo, esse recurso em geral é:
+###### 1. Dados
+Informação é dinheiro, quanto mais detalhada e fresca, melhor. E digo isso em um sentido extremamente literal, depois de conseguir um banco de dados cheio de informações esse arquivo pode ser vendido de forma relativamente fácil. O valor pelo qual isso é vendido vai depender do tipo de informação, mas mesmo que você consiga os dados dos jogadores de ragnarok online, essas informações são provavelmente replicadas em diversos sites, o mesmo e-mail, a mesma senha, logo a noção de que seu site "não guarda informações relevantes" é praticamente inexistente.
+###### 2. Tráfego
+O tráfego de um site pode ser redirecionado, seja para usar esse poder de redirecionamento para voltar no Dourado do big brother (isso de fato aconteceu), seja para redirecionar o usuário à uma cópia da mesma página original, porém no servidor de quem está atacando. O que é comum em bancos, não necessariamente o banco estando vulnerável, mas a máquina do cliente estar vulnerável e ter suas informações de DNS alteradas, o que faz com que acessar o site do banco redirecione para http://definitivamenteumsiteseguro.banco.com.br com o mesmo layout e funcionamento, exceto que enviando dados para quem está roubando as informações.
 
-PS. Esse texto parte do pressuposto que "desenvolvimento web" inclui front end, back end e devops
+TODO:
+1. mais exemplos
+2. mais clareza no que cada coisa significa em um nível não técnico
+3. mais ênfase em como danificar sistemas é indesejado
+4. 
