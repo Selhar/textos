@@ -29,6 +29,8 @@ Dito isso, aqui vai uma lista das [vulnerabilidades mais frequentes](https://www
 
 link pool:
 
-https://ssd.eff.org/pt-br#index
-
-https://www.hacker101.com/
+https://ssd.eff.org/pt-br#index  
+https://github.com/WebGoat/WebGoat  
+https://www.hacker101.com/  
+https://www.youtube.com/watch?v=WlmKwIe9z1Q  
+https://www.youtube.com/watch?v=qjrkV4RjgIU
