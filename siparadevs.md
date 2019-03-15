@@ -1,6 +1,6 @@
 # Porquê sistemas são invadidos?
 
-todo: repetição de palavras
+todo: repetição de palavras, formatação
 
 Segurança da informação é algo pouco falado e menos entendido, mesmo entre quem trabalha com programação de ponta ainda há a noção de que hackers usam capuz preto e terminais com letras verdes, além de fazerem ASCII art extremamente detalhada junto de cada payload. Isso torna necessária uma contextualização do que certos termos significam e porquê sistemas são invadidos em primeiro lugar.
 
