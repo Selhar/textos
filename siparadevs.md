@@ -1,4 +1,4 @@
-# Porquê sistemas são invadidos?
+## Porquê sistemas são invadidos?
 
 todo: repetição de palavras, formatação
 
@@ -7,14 +7,14 @@ Segurança da informação é algo pouco falado e menos entendido, mesmo entre q
 Raramente a intenção de um ataque é danificar o sistema, muito pelo contrário, cada sistema comprometido é um recurso que pode ser usado no futuro, seja vendendo as informações encontradas (logins, senhas, CPFs, cartões de crédito, etc..), seja utilizando o poder computacional latente em uma rede de máquinas comprometidas. Existem inúmeras formas que uma vulnerabilidade pode ser aproveitada, mas na maioria dos casos quem está atacando não quer ser percebido, portanto diretamente danificar o sistema é indesejado.  
 Com esse objetivo de obtenção de recursos em mente fica mais fácil entender o *mindset* de um hacker, a intenção não é a danificação de sistemas e sim a obtenção de uma longa e potencialmente lucrativa lista de sistemas vulneráveis e acessíveis à qualquer momento, a prioridade **sempre** vai ser o sistema mais vulnerável, mais fácil de entrar e sair sem qualquer tipo de registro. É importante se ter em mente que raramente um ataque vai ser direcionado à um alvo específico, a busca é por "qualquer um que esteja extremamente vulnerável", logo, o papel de uma equipe de desenvolvimento é seguir boas práticas que tornam o sistema indesejável para esse tipo de ataque comum, esses são os ataques mais frequentes e triviais de se evitar. Já uma equipe de segurança é responsável por tornar esse sistema não só indesejável para ataques genéricos como trabalhoso para ataques direcionados, com análises dos tipos de requests que são feitos ao sistema, práticas de como se detectar e reagir à um ataque entre diversos outros protocolos que vão aumentar o nível de habilidade necessário para que esse sistema seja atacado, quase toda multinacional possui algum programa de bug bounty e o objetivo é justamente esse, encontrar e se proteger contra ataques excepcionais. Vale notar também no meio de segurança é comum escrever sobre um ataque bem sucedido, então esse tipo de informação é extramemente acessível, uma pesquisa rápida por qualquer multinacional + writeup provavelmente vai resultar em alguma leitura fantástica sobre vulnerabilidades inimaginavelmente complexas. Como esses casos excepcionais exemplificam, nunca um sistema será imune, sempre vai ser fisicamente possível invadir de algum jeito, a questão é quão complexo será esse ataque. Em resumo, a grande maioria das empresas não precisará de uma equipe especializada em segurança caso tenha uma equipe de desenvolvimento que adota segurança como parte natural do seu processo de desenvolvimento.
 
-# Como evitar que o seu sistema seja comprometido
+## Como evitar que o seu sistema seja comprometido
 
 Há diversas formas pelas quais seu sistema pode ser manipulado de uma forma não intencional, mas vale lembrar que a maioria dos frameworks populares por padrão já lida com muitos desses problemas *caso o padrão oferecido pelo framework seja seguido*. 
 **TODO: exemplos tipo html_safe**
 
 Dito isso, aqui vai uma lista das [vulnerabilidades mais frequentes](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf) no desenvolvimento web, como se proteger delas e indicação de quais ferramentas os frameworks já utilizam por padrão para essa defesa:
 
-##### 1 - SQL injection
+### 1 - SQL injection
 SQL injection sempre está no topo das vulnerabilidades mais comuns, talvez por precisar de pouco preparo da parte do atacante, talvez pela falta de informação de como uma injection funciona, isso faz com que o processo de desenvolvimento seja inseguro por natureza.
 
 Como parâmetro, essas são as respostas do stack overflow de PHP que potencialmente contém SQL injections:  
@@ -29,13 +29,13 @@ Quando o usuário digita algo nessa barra de busca e dá enter, isso é traduzid
 Isso permite que essa query seja interrompida, substituída e manipulada, é uma porta dentro do seu sistema, como exemplificado pelo clássico quadrinho do xkdc:  
 TODO: linkar:https://mikewilliamson.files.wordpress.com/2016/09/exploits_of_a_mom.png  
   
-###### 1.1 - GraphQL
+#### 1.1 - GraphQL
 A especificação do graphQL provê uma natural separação entre a execução de uma query e o processamento dessa query. Ter essas duas frentes separadas pode parecer um detalhe mas na realidade tem uma implicação muito poderosa, que o papel do desenvolvimento se torna livre de riscos, a partir do momento que a estrutura de processamento de queries é criada, pode-se assumir que os dedos que chegam ao time de desenvolvimento são saudáveis. Isso tira a responsabilidade do dia a dia e deposita essa responsabilidade em decisões de arquitetura, facilitando o processo de desenvolvimento.
 
 Para exemplificar, a query anterior em GraphQL teria essa estrutura:
 **EXEMPLO**
 
-###### 1.2 - Material de estudo
+#### 1.2 - Material de estudo
 https://www.youtube.com/watch?v=WlmKwIe9z1Q  
 https://mikewilliamson.wordpress.com/2016/09/15/graphql-and-security/  
 https://www.youtube.com/watch?v=3kEfedtQVOY  
