@@ -1,3 +1,5 @@
+# Introdução à segurança da informação para times de desenvolvimento web
+
 ## Porquê sistemas são invadidos?
 
 todo: repetição de palavras, formatação
@@ -15,32 +17,19 @@ Há diversas formas pelas quais seu sistema pode ser manipulado de uma forma nã
 Dito isso, aqui vai uma lista das [vulnerabilidades mais frequentes](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf) no desenvolvimento web, como se proteger delas e indicação de quais ferramentas os frameworks já utilizam por padrão para essa defesa:
 
 ### 1 - SQL injection
-SQL injection sempre está no topo das vulnerabilidades mais comuns, talvez por precisar de pouco preparo da parte do atacante, talvez pela falta de informação de como uma injection funciona, isso faz com que o processo de desenvolvimento seja inseguro por natureza.
+todo: reescrever literalmente tudo, muito técnico e abstrato
 
-Como parâmetro, essas são as respostas do stack overflow de PHP que potencialmente contém SQL injections:  
-todo: [IMAGEM](https://laurent22.github.io/so-injections/)  
-Estas soluções são visualizadas, copiadas e replicadas em diversos sistemas o tempo todo porque é simplesmente conveniente usar uma solução pronta, e sem um conhecimento de como isso pode ser explorado (e mesmo que esse conhecimento esteja presente, é necessário uma cultura de desenvolvimento que veja esse processo como essencial e não opcional) é difícil culpar uma equipe de desenvolvimento pelo seu uso.
+SQL-I é um problema de interpretação de dados, quando se recebe uma informação do usuário essa informação precisa ser higienizada antes de ser enviada para processamento, sendo mais específico, quando você tem um form idealmente esse dado não vai chegar no servidor e ser diretamente enviado ao banco de dados, antes desse envio deve haver um intencional momento de verificação da integridade desses dados. Isso pode ser tratado à nível de framework ou de forma manual, mas de uma forma ou de outra é responsabilidade da equipe de desenvolvimento garantir que os dados que chegam ao banco de dados são válidos. Claro, nem sempre isso é previsível mas o fato de haver um esforço consciente em limitar o que é considerado como input válido já vai tornar qualquer sistema anos luz mais seguro do que simplesmente transformar um campo de input em um select.
 
-Basicamente uma SQL injection acontece quando um dado enviado pelo usuário não é higienizado, vamos supor que em um blog, há um form que pesquisa posts e retorna uma lista de resultados possíveis  
-[FOTO DE UM FORM](www.google.com)
-Quando o usuário digita algo nessa barra de busca e dá enter, isso é traduzido em uma query ao banco de dados que vai fazer o trabalho de pesquisa no back end. Agora, caso esses dados não sejam higienizados qualquer um que esteja fazendo essa busca basicamente tem acesso à parte de uma query privilegiada dentro do seu servidor, algo como  
-**EXEMPLO**
-
-Isso permite que essa query seja interrompida, substituída e manipulada, é uma porta dentro do seu sistema, como exemplificado pelo clássico quadrinho do xkdc:  
-TODO: linkar:https://mikewilliamson.files.wordpress.com/2016/09/exploits_of_a_mom.png  
-  
 #### 1.1 - GraphQL
 A especificação do graphQL provê uma natural separação entre a execução de uma query e o processamento dessa query. Ter essas duas frentes separadas pode parecer um detalhe mas na realidade tem uma implicação muito poderosa, que o papel do desenvolvimento se torna livre de riscos, a partir do momento que a estrutura de processamento de queries é criada, pode-se assumir que os dedos que chegam ao time de desenvolvimento são saudáveis. Isso tira a responsabilidade do dia a dia e deposita essa responsabilidade em decisões de arquitetura, facilitando o processo de desenvolvimento.
 
 Para exemplificar, a query anterior em GraphQL teria essa estrutura:
 **EXEMPLO**
 
-#### 1.2 - Material de estudo
-https://www.youtube.com/watch?v=WlmKwIe9z1Q  
-https://mikewilliamson.wordpress.com/2016/09/15/graphql-and-security/  
-https://www.youtube.com/watch?v=3kEfedtQVOY  
-https://github.com/WebGoat/WebGoat  
-https://www.youtube.com/watch?v=qjrkV4RjgIU
+#### 1.2 - Material de estudo extra
+Eu pensei em colocar uma lista de recomendações que podem ser legais pra se entender melhor o problema, mas por experiência ninguém vai consumir todo o material recomendado, então achei melhor fazer uma **excelente** recomendação em cada um desses tópicos que, caso você se interesse pode ser uma porta de entrada para se aprofundar na área. Para SQLI e manipulação de *inputs* em geral, recomendo essa apresentação(em inglês) que pode ser um pouco avançada demais, mas nada de outro mundo, o esforço de pesquisar termos desconhecidos é compensado pelo conteúdo da apresentação:
+https://www.youtube.com/watch?v=3kEfedtQVOY
 
 ##### 2 - Autenticação
 ##### 3 - Exibição de informação restrita em endpoints públicos
